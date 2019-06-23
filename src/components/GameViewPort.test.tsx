@@ -3,26 +3,35 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import GameViewPort from './GameViewPort';
 import CreatePlayer from './CreatePlayer';
 import GameContainer from './GameContainer';
+import Player from '../interfaces/Player';
 
 describe('GameViewPort', () => {
-  let wrapper: ShallowWrapper;
-  beforeEach(() => wrapper = shallow(<GameViewPort />));
-
-  it('should render a <div />', () => {
-    expect(wrapper.find('div').length).toEqual(1);
-  });
+  let wrapper: ShallowWrapper
+  let player: Player
+  let setPlayerNameHandler: (name: string) => void
 
   describe('When no player setted', () => {
-      it('should render the Create Player Component', () => {
-        debugger
-        const player = {name: "Pepe", score: 0}
-        expect(wrapper.containsMatchingElement(<CreatePlayer {...player} />)).toEqual(true);
-      });
-  });
+    beforeEach(() => {
+      player = {name: "", score: 0}
+      setPlayerNameHandler = (name: string) => {}
+      wrapper = shallow(<GameViewPort {...player} setPlayerNameHandler={setPlayerNameHandler} />)
+    })
+
+    it('should render the Create Player Component', () => {
+      const element = <CreatePlayer setPlayerNameHandler={setPlayerNameHandler} />
+      expect(wrapper.containsMatchingElement(element)).toEqual(true);
+    })
+  })
 
   describe('When player is setted', () => {
+    beforeEach(() => {
+      player = {name: "Test", score: 0}
+      wrapper = shallow(<GameViewPort {...player} setPlayerNameHandler={setPlayerNameHandler} />)
+    })
+
     it('should render the Game Container Component', () => {
-        expect(wrapper.containsMatchingElement(<GameContainer />)).toEqual(true);
-    });
-  });
-});
+      const element = <GameContainer name={player.name} score={player.score} />
+      expect(wrapper.containsMatchingElement(element)).toEqual(true);
+    })
+  })
+})

@@ -2,20 +2,24 @@ import React, { useState } from 'react';
 import CreatePlayer from './CreatePlayer';
 import GameContainer from './GameContainer';
 
-const GameViewPort: React.FC = () => {
-  const [player, setPlayer] = useState({name: 'Pepe', score: 0})
-  // let content
+interface GameViewPortProps {
+  name: string
+  score: number
+  setPlayerNameHandler: (name: string) => void
+}
+
+const GameViewPort: React.FC<GameViewPortProps> = ({name, score, setPlayerNameHandler}) => {
+  let content
   
-  // if (player.name) {
-  //   content = <GameContainer /> 
-  // } else {
-  //   content = <CreatePlayer {...player} />
-  // }
+  if (name) {
+    content = <GameContainer name={name} score={score} /> 
+  } else {
+    content = <CreatePlayer setPlayerNameHandler={setPlayerNameHandler} />
+  }
   
   return (
     <div className="Game-viewport">
-      <CreatePlayer {...player} />
-      <GameContainer /> 
+      {content}
     </div>
   );
 }

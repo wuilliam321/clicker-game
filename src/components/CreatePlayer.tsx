@@ -1,16 +1,19 @@
-import React from 'react';
-interface Player {
-  name: string;
-  score: number;
+import React, { useState } from 'react';
+interface PlayerProps {
+  setPlayerNameHandler: (e: any) => void;
 }
 
-const CreatePlayer: React.FC<Player> = ({name, score}) => {
+const CreatePlayer: React.FC<PlayerProps> = ({setPlayerNameHandler}) => {
+  const [name, setName] = useState('')
+  const setNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => (setName(e.target.value))
+  
   return (
     <div className="Game-create-player">
-        <h1>What's your name {name} / {score}</h1>
+        <h1>What's your name</h1>
         <label htmlFor="name">
             Your name:
-            <input type="text" name="name" id="name" placeholder="Guess" />
+            <input type="text" name="name" id="name" placeholder="Guess" onChange={setNameHandler} />
+            <button onClick={() => setPlayerNameHandler(name)}>Start</button>
         </label>
     </div>
   );
