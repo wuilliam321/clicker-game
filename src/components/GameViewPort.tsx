@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
-import CreatePlayer from './CreatePlayer';
-import GameContainer from './GameContainer';
+import React from "react";
+import CreatePlayer from "./CreatePlayer";
+import GameContainer from "./GameContainer";
+import GameProps from "../interfaces/GameProps";
 
-interface GameViewPortProps {
-  name: string
-  score: number
-  setPlayerNameHandler: (name: string) => void
-}
+const GameViewPort: React.FC<GameProps> = props => {
+  const { name, setPlayerNameHandler } = props;
+  let content;
 
-const GameViewPort: React.FC<GameViewPortProps> = ({name, score, setPlayerNameHandler}) => {
-  let content
-  
   if (name) {
-    content = <GameContainer name={name} score={score} /> 
+    content = <GameContainer {...props} />;
   } else {
-    content = <CreatePlayer setPlayerNameHandler={setPlayerNameHandler} />
+    content = <CreatePlayer setPlayerNameHandler={setPlayerNameHandler} />;
   }
-  
-  return (
-    <div className="Game-viewport">
-      {content}
-    </div>
-  );
-}
+
+  return <div className="Game-viewport">{content}</div>;
+};
 
 export default GameViewPort;
