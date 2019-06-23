@@ -7,13 +7,12 @@ import GameProps from "./interfaces/GameProps";
 
 describe("ClickerGame", () => {
   let wrapper: ShallowWrapper;
-  let player: Player;
   let gameProps: GameProps;
 
   beforeEach(() => {
-    player = { name: "", score: 0 };
     gameProps = {
-      ...player,
+      name: "",
+      score: 0,
       setPlayerNameHandler: (name: string) => {},
       setPlayerScoreHandler: () => {}
     };
@@ -24,8 +23,8 @@ describe("ClickerGame", () => {
     expect(wrapper.find("div").length).toEqual(1);
   });
 
-  // it('should render the GameViewport Component', () => {
-  //   const element = <GameViewPort {...gameProps} />
-  //   expect(wrapper.containsMatchingElement(element)).toEqual(true)
-  // })
+  // it("should render the GameViewport Component", () => {
+  //   const element = <GameViewPort {...gameProps} />;
+  //   expect(wrapper.contains(element)).toEqual(true);
+  // });
 });
