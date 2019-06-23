@@ -14,7 +14,9 @@ describe('GameViewPort', () => {
 
   describe('When no player setted', () => {
       it('should render the Create Player Component', () => {
-        expect(wrapper.containsMatchingElement(<CreatePlayer />)).toEqual(true);
+        debugger
+        const player = {name: "Pepe", score: 0}
+        expect(wrapper.containsMatchingElement(<CreatePlayer {...player} />)).toEqual(true);
       });
   });
 
