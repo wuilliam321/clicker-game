@@ -19,8 +19,10 @@
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
+  "homepage":"https://wuilliam321.github.io/clicker-game",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -42,6 +44,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0",
+    "gh-pages": "^2.0.1",
     "react-test-renderer": "^16.8.6"
   },
   "jest": {
@@ -57,6 +60,8 @@
         "statements": 90
       }
     },
-    "coverageReporters": ["html"]
+    "coverageReporters": [
+      "html"
+    ]
   }
 }
