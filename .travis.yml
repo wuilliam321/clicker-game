@@ -1,8 +1,18 @@
+language: node_js
+node_js:
+  - "12.4.1"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run test
+  - npm run build
 deploy:
+  email: wuilliam321@gmail.com
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  email: wuilliam321@gmail.com
+  project: ./build/
   on:
     branch: master
