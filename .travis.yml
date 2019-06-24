@@ -7,6 +7,7 @@ cache:
 script:
   - npm run test
   - npm run build
+  - npm deploy
 deploy:
   email: wuilliam321@gmail.com
   provider: pages
