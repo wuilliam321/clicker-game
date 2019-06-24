@@ -31,7 +31,7 @@ describe("Feedback", () => {
     });
 
     it("should render a <p />", () => {
-      expect(wrapper.find("p").text()).toEqual("You have won!");
+      expect(wrapper.find("span").text()).toEqual("You have won!");
     });
   });
 });
