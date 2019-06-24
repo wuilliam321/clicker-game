@@ -17,7 +17,8 @@ describe("GameContainer", () => {
       name: "Test",
       score: 0,
       setPlayerNameHandler: (name: string) => {},
-      setPlayerScoreHandler: () => {}
+      setPlayerScoreHandler: () => {},
+      setPlayerWonHandler: () => {}
     };
     clickerProps = {
       score: gameProps.score,
@@ -31,7 +32,7 @@ describe("GameContainer", () => {
   });
 
   it("should render the Feedback Component", () => {
-    const element = <Feedback />;
+    const element = <Feedback score={clickerProps.score} />;
     expect(wrapper.containsMatchingElement(element)).toEqual(true);
   });
 

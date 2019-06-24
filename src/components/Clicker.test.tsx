@@ -2,6 +2,7 @@ import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
 import Clicker from "./Clicker";
 import ClickerProps from "../interfaces/ClickerProps";
+import { WinnerScore } from "../shared/constants";
 
 describe("Clicker", () => {
   let clickerProps: ClickerProps;
@@ -10,7 +11,7 @@ describe("Clicker", () => {
   beforeEach(() => {
     clickerProps = {
       score: 0,
-      setPlayerScoreHandler: () => {}
+      setPlayerScoreHandler: jest.fn()
     };
     wrapper = shallow(<Clicker {...clickerProps} />);
   });
@@ -21,5 +22,26 @@ describe("Clicker", () => {
 
   it("should render a <div />", () => {
     expect(wrapper.find("button#clicker-btn").length).toEqual(1);
+  });
+
+  it("should show the score as button text", () => {
+    wrapper.setProps({ score: 5 });
+    expect(wrapper.find("button#clicker-btn").text()).toEqual("5");
+  });
+
+  it("should call setPlayerScoreHandler on click", () => {
+    const btn = wrapper.find("button#clicker-btn");
+    btn.simulate("click");
+    expect(clickerProps.setPlayerScoreHandler).toHaveBeenCalled();
+  });
+
+  it(`should not prevent click when score < ${WinnerScore}`, () => {
+    wrapper.setProps({ score: 5 });
+    expect(wrapper.find("button#clicker-btn").prop("disabled")).toEqual(false);
+  });
+
+  it(`should prevent click when score = ${WinnerScore}`, () => {
+    wrapper.setProps({ score: 10 });
+    expect(wrapper.find("button#clicker-btn").prop("disabled")).toEqual(true);
   });
 });

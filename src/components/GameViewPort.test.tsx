@@ -3,21 +3,24 @@ import { shallow, ShallowWrapper } from "enzyme";
 import GameViewPort from "./GameViewPort";
 import CreatePlayer from "./CreatePlayer";
 import GameContainer from "./GameContainer";
-import Player from "../interfaces/Player";
 import GameProps from "../interfaces/GameProps";
+import CreatePlayerProps from "../interfaces/CreatePlayerProps";
 
 describe("GameViewPort", () => {
   let wrapper: ShallowWrapper;
-  let player: Player;
   let gameProps: GameProps;
+  let createPlayerProps: CreatePlayerProps;
 
   beforeEach(() => {
-    player = { name: "", score: 0 };
     gameProps = {
-      name: player.name,
-      score: player.score,
+      name: "",
+      score: 0,
       setPlayerNameHandler: (name: string) => {},
-      setPlayerScoreHandler: () => {}
+      setPlayerScoreHandler: () => {},
+      setPlayerWonHandler: () => {}
+    };
+    createPlayerProps = {
+      setPlayerNameHandler: gameProps.setPlayerNameHandler
     };
   });
 
@@ -27,10 +30,7 @@ describe("GameViewPort", () => {
     });
 
     it("should render the Create Player Component", () => {
-      const element = (
-        <CreatePlayer setPlayerNameHandler={gameProps.setPlayerNameHandler} />
-      );
-      expect(wrapper.containsMatchingElement(element)).toEqual(true);
+      expect(wrapper.find("CreatePlayer").length).toEqual(1);
     });
   });
 

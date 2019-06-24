@@ -17,7 +17,7 @@ const GameContainer: React.FC<GameProps> = ({
   return (
     <div className="Game-game-container">
       <h2>Welcome {name}!</h2>
-      <Feedback />
+      <Feedback score={score} />
       <Clicker {...clickerProps} />
       <Actions />
     </div>

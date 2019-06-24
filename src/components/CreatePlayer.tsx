@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-interface PlayerProps {
-  setPlayerNameHandler: (e: any) => void;
-}
+import CreatePlayerProps from "../interfaces/CreatePlayerProps";
 
-const CreatePlayer: React.FC<PlayerProps> = ({ setPlayerNameHandler }) => {
+// TODO: Maybe we need to pass the name to make it testable,
+// and do not use setName because it is a presentational component
+const CreatePlayer: React.FC<CreatePlayerProps> = ({
+  setPlayerNameHandler
+}) => {
   const [name, setName] = useState("");
   const setNameHandler = (e: React.ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value);
@@ -17,10 +19,13 @@ const CreatePlayer: React.FC<PlayerProps> = ({ setPlayerNameHandler }) => {
           type="text"
           name="name"
           id="name"
+          value={name}
           placeholder="Guess"
           onChange={setNameHandler}
         />
-        <button onClick={() => setPlayerNameHandler(name)}>Start</button>
+        <button id="start-btn" onClick={() => setPlayerNameHandler(name)}>
+          Start
+        </button>
       </label>
     </div>
   );
