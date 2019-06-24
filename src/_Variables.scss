@@ -1,0 +1,21 @@
+$primaryColor: red;
+$primaryColorLight: rgb(255, 95, 95);
+$secondaryColor: rgb(0, 71, 0);
+$secondaryColorLight: rgb(92, 163, 92);
+$darkColor: black;
+$darkColorLight: rgb(53, 53, 53);
+$lightColor: rgb(231, 231, 231);
+$ligtkColorDark: rgb(185, 185, 185);
+
+@mixin block-centered {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+}
+
+@mixin action-btn {
+  border: 2px solid $darkColor;
+  background-color: $lightColor;
+  color: $darkColor;
+  font-size: 2rem;
+}

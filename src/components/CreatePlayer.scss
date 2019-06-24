@@ -1,0 +1,22 @@
+@import "../Variables.scss";
+
+.Game-create-player {
+  width: 100%;
+  label,
+  input {
+    font-size: 2rem;
+    @include block-centered;
+  }
+  input {
+    color: $primaryColor;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: $darkColor;
+  }
+
+  button {
+    @include action-btn;
+  }
+}

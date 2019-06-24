@@ -1,0 +1,18 @@
+@import "../Variables.scss";
+
+.Game-feedback {
+  width: 100%;
+  min-height: 30px;
+
+  .message {
+    @include block-centered;
+    text-align: center;
+
+    span {
+      color: $lightColor;
+      font-weight: bold;
+      background-color: $secondaryColorLight;
+      padding: 2px 5px;
+    }
+  }
+}

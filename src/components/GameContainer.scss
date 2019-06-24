@@ -1,0 +1,12 @@
+@import "../Variables.scss";
+
+.Game-game-container {
+  width: 100%;
+  h2, p {
+    @include block-centered;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,10 @@
+@import "../Variables.scss";
+
+.Game-actions {
+  width: 100%;
+  
+  button {
+    @include block-centered;
+    @include action-btn;
+  }
+}

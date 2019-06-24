@@ -1,10 +1,11 @@
 import React from "react";
+import ActionsProps from "../interfaces/ActionsProps";
 import ClickerProps from "../interfaces/ClickerProps";
 import GameProps from "../interfaces/GameProps";
 import Actions from "./Actions";
 import Clicker from "./Clicker";
 import Feedback from "./Feedback";
-import ActionsProps from "../interfaces/ActionsProps";
+import "./GameContainer.scss";
 
 const GameContainer: React.FC<GameProps> = ({
   name,
@@ -22,6 +23,7 @@ const GameContainer: React.FC<GameProps> = ({
   return (
     <div className="Game-game-container">
       <h2>Welcome {name}!</h2>
+      <p>Let's play. Click on red button like a crazy, or click "Restart" to play again</p>
       <Feedback score={score} />
       <Clicker {...clickerProps} />
       <Actions {...actionsProps} />

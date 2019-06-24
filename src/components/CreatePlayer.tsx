@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CreatePlayerProps from "../interfaces/CreatePlayerProps";
+import "./CreatePlayer.scss";
 
 const CreatePlayer: React.FC<CreatePlayerProps> = ({
   setPlayerNameHandler
@@ -10,9 +11,8 @@ const CreatePlayer: React.FC<CreatePlayerProps> = ({
 
   return (
     <div className="Game-create-player">
-      <h1>What's your name</h1>
       <label htmlFor="name">
-        Your name:
+        What's your name?
         <input
           type="text"
           name="name"

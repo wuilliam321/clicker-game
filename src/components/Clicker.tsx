@@ -1,4 +1,5 @@
 import React from "react";
+import "./Clicker.scss";
 import ClickerProps from "../interfaces/ClickerProps";
 import { WinnerScore } from "../shared/constants";
 
