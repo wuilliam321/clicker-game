@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/clicker-game/static/css/main.435c2168.chunk.css",
+    "main.js": "/clicker-game/static/js/main.9851e364.chunk.js",
+    "main.js.map": "/clicker-game/static/js/main.9851e364.chunk.js.map",
+    "runtime~main.js": "/clicker-game/static/js/runtime~main.8efb6c9b.js",
+    "runtime~main.js.map": "/clicker-game/static/js/runtime~main.8efb6c9b.js.map",
+    "static/js/2.91120321.chunk.js": "/clicker-game/static/js/2.91120321.chunk.js",
+    "static/js/2.91120321.chunk.js.map": "/clicker-game/static/js/2.91120321.chunk.js.map",
+    "index.html": "/clicker-game/index.html",
+    "precache-manifest.2d98a74729b40b8c44f29f9b178c9d2b.js": "/clicker-game/precache-manifest.2d98a74729b40b8c44f29f9b178c9d2b.js",
+    "service-worker.js": "/clicker-game/service-worker.js",
+    "static/css/main.435c2168.chunk.css.map": "/clicker-game/static/css/main.435c2168.chunk.css.map"
+  }
+}
