@@ -1,7 +1,7 @@
-import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
-import CreatePlayer from "./CreatePlayer";
+import React from "react";
 import CreatePlayerProps from "../interfaces/CreatePlayerProps";
+import CreatePlayer from "./CreatePlayer";
 
 describe("GameViewPort", () => {
   let wrapper: ShallowWrapper;

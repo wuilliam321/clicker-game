@@ -1,8 +1,8 @@
-import React from "react";
 import { shallow, ShallowWrapper } from "enzyme";
-import Clicker from "./Clicker";
+import React from "react";
 import ClickerProps from "../interfaces/ClickerProps";
 import { WinnerScore } from "../shared/constants";
+import Clicker from "./Clicker";
 
 describe("Clicker", () => {
   let clickerProps: ClickerProps;

@@ -1,9 +1,9 @@
 import React from "react";
-import Feedback from "./Feedback";
-import Clicker from "./Clicker";
-import Actions from "./Actions";
-import GameProps from "../interfaces/GameProps";
 import ClickerProps from "../interfaces/ClickerProps";
+import GameProps from "../interfaces/GameProps";
+import Actions from "./Actions";
+import Clicker from "./Clicker";
+import Feedback from "./Feedback";
 
 const GameContainer: React.FC<GameProps> = ({
   name,

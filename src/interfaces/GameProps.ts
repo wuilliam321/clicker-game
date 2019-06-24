@@ -3,5 +3,4 @@ export default interface GameProps {
   score: number;
   setPlayerNameHandler: (name: string) => void;
   setPlayerScoreHandler: () => void;
-  setPlayerWonHandler: () => void;
 }

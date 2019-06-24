@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ClickerGame.scss";
 import GameViewPort from "./components/GameViewPort";
-import Player from "./interfaces/Player";
 import GameProps from "./interfaces/GameProps";
+import Player from "./interfaces/Player";
 import { WinnerScore } from "./shared/constants";
 
 const ClickerGame: React.FC = () => {
@@ -15,22 +15,18 @@ const ClickerGame: React.FC = () => {
 
   const setPlayerScore = () => {
     setPlayer(prevState => {
-      const newScore =
-        prevState.score < WinnerScore ? prevState.score + 1 : WinnerScore;
-      return { ...prevState, score: newScore };
+      const canContinue = prevState.score < WinnerScore;
+      const newScore = canContinue ? prevState.score + 1 : WinnerScore;
+      const isWinner = !canContinue;
+      return { ...prevState, score: newScore, won: isWinner };
     });
-  };
-
-  const setPlayerWon = () => {
-    setPlayer(prevState => ({ ...prevState, score: 0, won: true }));
   };
 
   const gameProps: GameProps = {
     name: player.name,
     score: player.score,
     setPlayerNameHandler: setPlayerName,
-    setPlayerScoreHandler: setPlayerScore,
-    setPlayerWonHandler: setPlayerWon
+    setPlayerScoreHandler: setPlayerScore
   };
 
   return (

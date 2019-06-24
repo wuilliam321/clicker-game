@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import CreatePlayerProps from "../interfaces/CreatePlayerProps";
 
-// TODO: Maybe we need to pass the name to make it testable,
-// and do not use setName because it is a presentational component
 const CreatePlayer: React.FC<CreatePlayerProps> = ({
   setPlayerNameHandler
 }) => {

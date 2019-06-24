@@ -1,8 +1,8 @@
 import React from "react";
+import CreatePlayerProps from "../interfaces/CreatePlayerProps";
+import GameProps from "../interfaces/GameProps";
 import CreatePlayer from "./CreatePlayer";
 import GameContainer from "./GameContainer";
-import GameProps from "../interfaces/GameProps";
-import CreatePlayerProps from "../interfaces/CreatePlayerProps";
 
 const GameViewPort: React.FC<GameProps> = props => {
   const { name, setPlayerNameHandler } = props;

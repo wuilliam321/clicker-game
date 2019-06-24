@@ -1,11 +1,11 @@
 import { shallow, ShallowWrapper } from "enzyme";
 import React from "react";
+import ClickerProps from "../interfaces/ClickerProps";
 import GameProps from "../interfaces/GameProps";
 import Actions from "./Actions";
 import Clicker from "./Clicker";
 import Feedback from "./Feedback";
 import GameContainer from "./GameContainer";
-import ClickerProps from "../interfaces/ClickerProps";
 
 describe("GameContainer", () => {
   let gameProps: GameProps;
@@ -17,8 +17,7 @@ describe("GameContainer", () => {
       name: "Test",
       score: 0,
       setPlayerNameHandler: (name: string) => {},
-      setPlayerScoreHandler: () => {},
-      setPlayerWonHandler: () => {}
+      setPlayerScoreHandler: () => {}
     };
     clickerProps = {
       score: gameProps.score,
