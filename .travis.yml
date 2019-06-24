@@ -1,0 +1,8 @@
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  email: wuilliam321@gmail.com
+  on:
+    branch: gh-pages
