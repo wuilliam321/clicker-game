@@ -5,4 +5,4 @@ deploy:
   keep_history: true
   email: wuilliam321@gmail.com
   on:
-    branch: gh-pages
+    branch: master
