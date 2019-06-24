@@ -2,7 +2,6 @@ import { shallow, ShallowWrapper } from "enzyme";
 import React from "react";
 import ClickerProps from "../interfaces/ClickerProps";
 import GameProps from "../interfaces/GameProps";
-import Actions from "./Actions";
 import Clicker from "./Clicker";
 import Feedback from "./Feedback";
 import GameContainer from "./GameContainer";
@@ -17,7 +16,8 @@ describe("GameContainer", () => {
       name: "Test",
       score: 0,
       setPlayerNameHandler: (name: string) => {},
-      setPlayerScoreHandler: () => {}
+      setPlayerScoreHandler: () => {},
+      resetGameHandler: () => {}
     };
     clickerProps = {
       score: gameProps.score,
@@ -41,7 +41,6 @@ describe("GameContainer", () => {
   });
 
   it("should render the Actions Component", () => {
-    const element = <Actions />;
-    expect(wrapper.containsMatchingElement(element)).toEqual(true);
+    expect(wrapper.find('Actions').length).toEqual(1);
   });
 });

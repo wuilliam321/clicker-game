@@ -13,7 +13,8 @@ describe("GameViewPort", () => {
       name: "",
       score: 0,
       setPlayerNameHandler: (name: string) => {},
-      setPlayerScoreHandler: () => {}
+      setPlayerScoreHandler: () => {},
+      resetGameHandler: () => {}
     };
   });
 
