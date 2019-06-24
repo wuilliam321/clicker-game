@@ -16,17 +16,21 @@ const ClickerGame: React.FC = () => {
   const setPlayerScore = () => {
     setPlayer(prevState => {
       const canContinue = prevState.score < WinnerScore;
-      const newScore = canContinue ? prevState.score + 1 : WinnerScore;
-      const isWinner = !canContinue;
+      const score = prevState.score + 1;
+      const newScore = canContinue ? score : WinnerScore;
+      const isWinner = score === WinnerScore;
       return { ...prevState, score: newScore, won: isWinner };
     });
   };
+
+  const resetGame = () => setPlayer(initialValue)
 
   const gameProps: GameProps = {
     name: player.name,
     score: player.score,
     setPlayerNameHandler: setPlayerName,
-    setPlayerScoreHandler: setPlayerScore
+    setPlayerScoreHandler: setPlayerScore,
+    resetGameHandler: resetGame
   };
 
   return (
@@ -34,7 +38,7 @@ const ClickerGame: React.FC = () => {
       <GameViewPort {...gameProps} />
       <pre>player name: {player.name}</pre>
       <pre>player score: {player.score}</pre>
-      <pre>player won?: {player.won ? "Winner" : "Not yet"}</pre>
+      <pre>game status: {player.won ? "stopped / winner" : "playing"}</pre>
     </div>
   );
 };
