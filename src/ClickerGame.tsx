@@ -3,6 +3,7 @@ import "./ClickerGame.scss";
 import GameViewPort from "./components/GameViewPort";
 import Player from "./interfaces/Player";
 import GameProps from "./interfaces/GameProps";
+import { WinnerScore } from "./shared/constants";
 
 const ClickerGame: React.FC = () => {
   const initialValue: Player = { name: "", score: 0, won: false };
@@ -13,7 +14,11 @@ const ClickerGame: React.FC = () => {
   };
 
   const setPlayerScore = () => {
-    setPlayer(prevState => ({ ...prevState, score: prevState.score + 1 }));
+    setPlayer(prevState => {
+      const newScore =
+        prevState.score < WinnerScore ? prevState.score + 1 : WinnerScore;
+      return { ...prevState, score: newScore };
+    });
   };
 
   const setPlayerWon = () => {

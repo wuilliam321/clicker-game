@@ -28,6 +28,6 @@ describe("GameViewPort", () => {
     const input = wrapper.find("input#name");
     input.simulate("change", { target: { value: "Test" } });
     wrapper.update();
-    expect(wrapper.find("input#name").props().value).toEqual("Test 2");
+    expect(wrapper.find("input#name").props().value).toEqual("Test");
   });
 });
